@@ -1,0 +1,289 @@
+<html>
+<head>
+    <style>
+    body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    --line-offset: calc((10vh + 8px) / 2);
+}
+
+.container1 {
+    width: 100vw;
+    height: 65vh;
+    display: grid;
+    grid-template-rows: 7fr 1fr;
+    background: #021919;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    display: flex;
+}
+
+.tab {
+    width: calc(10vh + 8px);
+    height: calc(10vh + 8px);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    clip-path: polygon(0% 50%, 15% 0%, 85% 0%, 100% 50%, 85% 100%, 15% 100%);
+    shape-outside: polygon(0% 50%, 15% 0%, 85% 0%, 100% 50%, 85% 100%, 15% 100%);
+    z-index: 0;
+    transition: width 0.5s;
+}
+
+.tab img {
+    width: 10vh;
+    height: 10vh;
+    z-index: 10;
+    cursor: pointer;
+    clip-path: polygon(0% 50%, 15% 0%, 85% 0%, 100% 50%, 85% 100%, 15% 100%);
+    shape-outside: polygon(0% 50%, 15% 0%, 85% 0%, 100% 50%, 85% 100%, 15% 100%);
+    transition: width 0.5s;
+}
+
+[type=radio] {
+    display: none;   
+}
+
+.preview-list {
+    background: linear-gradient(
+        #021919,
+        #021919 var(--line-offset),
+        #efefef var(--line-offset)
+    );
+}
+
+.tab {
+    background: linear-gradient(
+        #efefef,
+        #efefef var(--line-offset),
+        #021919 var(--line-offset)
+    );
+}
+
+[type=radio]:checked ~ label ~ .content1{
+    text-align: center;
+    z-index: 8;
+}
+
+
+[type=radio]:checked ~ label .tab{
+    width: 0;
+}
+
+.content1 {
+    position: absolute;
+    background: #021919;
+    top: 10vh;
+    left: 0;
+    width: 100vw;
+    height: 55vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.content1 img {
+    height: auto;
+    width: 50vw;
+    padding-left: 50vh;  
+}  
+
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 30px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #149ddd;
+  color: white;
+}
+
+.container2 {
+  display: flex;
+  width: 100%;
+  padding: 4% 2%;
+  box-sizing: border-box;
+  height: 100vh;
+}
+
+.box {
+  flex: 1;
+  overflow: hidden;
+  transition: .5s;
+  margin: 0 2%;
+  box-shadow: 0 20px 30px rgba(0,0,0,.1);
+  line-height: 0;
+}
+
+.box > img {
+  width: 200%;
+  height: calc(100% - 10vh);
+  object-fit: cover; 
+  transition: .5s;
+}
+
+.box > span {
+  font-size: 3.8vh;
+  display: block;
+  text-align: center;
+  height: 10vh;
+  line-height: 2.6;
+}
+
+.box:hover { flex: 1 1 50%; }
+.box:hover > img {
+  width: 100%;
+  height: 100%;
+}
+ 
+    </style>
+</head>
+<body>
+    <div>
+            <div class="topnav">
+                    <a class="active" href="index.html">Home</a>
+                    <a href="index.html#about">About</a>
+                    <a href="index.html#portfolio">Portfolio</a>
+                    <a href="galary.html">My Galary</a>
+                    <a href="test.html">Photoshoots Done</a>
+          </div>
+    </div>
+        <div class="container1">
+                <div class="full-view"></div>
+                <div class="preview-list">
+                    <ul>
+                        <li>
+                            <input type="radio" id="tab-1" name="gallery-group">
+                            <label for="tab-1">
+                                <div class="tab">
+                                    <img
+                                        src="https://images.pexels.com/photos/1559117/pexels-photo-1559117.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
+                                </div>
+                            </label>
+                            <div class="content1">
+                                <img
+                                    src="https://images.pexels.com/photos/1559117/pexels-photo-1559117.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
+                            </div>
+                        </li>
+                        <li>
+                            <input type="radio" id="tab-2" name="gallery-group">
+                            <label for="tab-2">
+                                <div class="tab">
+                                    <img
+                                        src="https://images.pexels.com/photos/688660/pexels-photo-688660.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
+                                </div>
+                            </label>
+                            <div class="content1">
+                                <img
+                                    src="https://images.pexels.com/photos/688660/pexels-photo-688660.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
+                            </div>
+                        </li>
+                        <li>
+                            <input type="radio" id="tab-3" name="gallery-group">
+                            <label for="tab-3">
+                                <div class="tab">
+                                    <img
+                                        src="https://images.pexels.com/photos/730256/pexels-photo-730256.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
+                                </div>
+                            </label>
+                            <div class="content1">
+                                <img
+                                    src="https://images.pexels.com/photos/730256/pexels-photo-730256.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
+                            </div>
+                        </li>
+                        <li>
+                            <input type="radio" id="tab-4" name="gallery-group" checked>
+                            <label for="tab-4">
+                                <div class="tab">
+                                    <img
+                                        src="https://images.pexels.com/photos/22427/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
+                                </div>
+                            </label>
+                            <div class="content1">
+                                <img src="https://images.pexels.com/photos/22427/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
+                            </div>
+                        </li>
+                        <li>
+                            <input type="radio" id="tab-5" name="gallery-group">
+                            <label for="tab-5">
+                                <div class="tab">
+                                    <img
+                                        src="https://images.pexels.com/photos/789380/pexels-photo-789380.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
+                                </div>
+                            </label>
+                            <div class="content1">
+                                    <img src="https://images.pexels.com/photos/789380/pexels-photo-789380.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
+                                </div>
+                        </li>
+                        <li>
+                            <input type="radio" id="tab-6" name="gallery-group">
+                            <label for="tab-6">
+                                <div class="tab">
+                                    <img
+                                        src="https://images.pexels.com/photos/355411/pexels-photo-355411.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" />
+                                </div>
+                            </label>
+                            <div class="content1">
+                                    <img src="https://images.pexels.com/photos/355411/pexels-photo-355411.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" />
+                                </div>
+                        </li>
+                        <li>
+                            <input type="radio" id="tab-7" name="gallery-group">
+                            <label for="tab-7">
+                                <div class="tab">
+                                    <img
+                                        src="https://images.pexels.com/photos/1424246/pexels-photo-1424246.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
+                                </div>
+                            </label>
+                            <div class="content1">
+                                    <img src="assets/img/profile-img.jpg"/></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <br>
+            <br>
+<h1 style="text-align:center"><b>My pictures</b></h1>
+            <div class="container2">
+                    <div class="box">
+                      <img src="assets/img/portfolio/portfolio-1.jpg">
+                    </div>
+                    <div class="box">
+                      <img src="assets/img/portfolio/portfolio-2.jpg">
+                    </div>
+                    <div class="box">
+                      <img src="assets/img/portfolio/portfolio-3.jpg">
+                    </div>
+                    <div class="box">
+                      <img src="assets/img/portfolio/portfolio-4.jpg">
+                    </div>
+                    <div class="box">
+                     <img src="assets/img/profile-img.jpg">
+                    </div>
+              </div>
+              
+
+        </body>
+</html>
